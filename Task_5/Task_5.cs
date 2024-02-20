@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Task_4
+namespace Task_5
 {
-    internal class Task_4
+    internal class Task_5
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите координаты короля x1y1 и координаты фигуры x2y2:");
+            Console.WriteLine("Введите координаты коня x1, y1 и координаты фигуры x2, y2:");
             string input = Console.ReadLine();
 
             if (input.Length == 0)
@@ -42,21 +42,27 @@ namespace Task_4
                 return;
             }
 
-            // Проверяем, бьет ли король фигуру
-            if (Math.Abs(x1 - x2) <= 1 && Math.Abs(y1 - y2) <= 1)
+            // Проверяем, бьет ли конь фигуру
+            if (IsKnightMove(x1, y1, x2, y2))
             {
-                Console.WriteLine("Король сможет побить фигуру");
+                Console.WriteLine("Конь сможет побить фигуру");
             }
             else
             {
-                Console.WriteLine("Король не сможет побить фигуру");
+                Console.WriteLine("Конь не сможет побить фигуру");
             }
             ExitTheProgram();
         }
-
         static bool IsValidCoordinate(char x, char y)
         {
             return x >= 'a' && x <= 'h' && y >= '1' && y <= '8';
+        }
+
+        static bool IsKnightMove(char x1, char y1, char x2, char y2)
+        {
+            int dx = Math.Abs(x1 - x2);
+            int dy = Math.Abs(y1 - y2);
+            return (dx == 2 && dy == 1) || (dx == 1 && dy == 2);
         }
 
         static void ExitTheProgram()
