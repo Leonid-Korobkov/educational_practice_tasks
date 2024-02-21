@@ -10,7 +10,7 @@ namespace Task_5
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите координаты коня x1, y1 и координаты фигуры x2, y2:");
+            Console.WriteLine("Введите координаты коня x1y1 и координаты фигуры x2y2:");
             string input = Console.ReadLine();
 
             if (input.Length == 0)
