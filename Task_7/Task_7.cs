@@ -3,7 +3,7 @@ using System.IO;
 
 namespace Task_7
 {
-    class Program
+    class Task_7
     {
         const int columnRightPosition = 35;
         static void Main(string[] args)
