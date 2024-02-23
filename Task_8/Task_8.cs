@@ -121,6 +121,5 @@ namespace Task_8
                 Console.ResetColor();
             }
         }
-    
     }
 }
